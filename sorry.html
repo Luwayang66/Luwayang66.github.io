@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sorry Letter - CSS Only</title>
+  <style>
+    body {
+      background: #f0e6d2;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .envelope {
+      width: 300px;
+      height: 200px;
+      background: #fff;
+      border: 3px solid #b87c55;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    /* Flap */
+    .flap {
+      width: 300px;
+      height: 100px;
+      background: #b87c55;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-bottom: 3px solid #b87c55;
+      border-radius: 10px 10px 0 0;
+      transform-origin: bottom center;
+      transition: transform 1s ease;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3em;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    /* Letter text */
+    .letter {
+      padding: 20px;
+      margin-top: 80px;
+      opacity: 0;
+      transition: opacity 1s ease 0.7s;
+      font-size: 1.1em;
+      line-height: 1.4;
+      color: #5a3e1b;
+    }
+
+    /* On hover, open flap and show letter */
+    .envelope:hover .flap {
+      transform: rotateX(-180deg);
+    }
+
+    .envelope:hover .letter {
+      opacity: 1;
+    }
+
+    .instruction {
+      position: fixed;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #886533;
+      user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="envelope" title="Hover to open">
+    <div class="flap">Hover to open 💔</div>
+    <div class="letter">
+      Really sorry yr. i mean to include u but; they didnt allow. SO, i js had to go through that flow.<br /><br />
+      You mean a lot to me TWIN.<br /><br />
+      Hope we can keep making awesome memories together! 🫶
+    </div>
+  </div>
+
+  <div class="instruction">Hover over the envelope to open the letter</div>
+
+</body>
+
+</html>
